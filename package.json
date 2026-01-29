@@ -19,6 +19,6 @@
     }
   },
   "dependencies": {
-    "jjsx": "3.0.7-rc.0"
+    "jjsx": "^3.1.0"
   }
 }
