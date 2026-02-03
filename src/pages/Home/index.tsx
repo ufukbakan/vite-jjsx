@@ -2,18 +2,20 @@ import { hydrate } from "../../../infra/render";
 import typescriptLogo from "./typescript.svg";
 import Layout from "../_layout";
 import viteLogo from "/vite.svg";
+import { use } from "../../../infra/state";
 
 export default function Home() {
-    let counter = 0
+    const count = use(0);
     hydrate(() => {
         const element = document.querySelector<HTMLButtonElement>('#counter')!;
-        const increment = () => {
-            counter += 1;
-            element.innerHTML = `count is ${counter}`
-        }
+        const increment = () => count.set(count.get() + 1);
+        const unsubscribeCount = count.subscribe((value) => {
+            element.innerHTML = `Count is ${value}`
+        });
         element.addEventListener('click', increment)
         return () => {
             element.removeEventListener('click', increment)
+            unsubscribeCount();
         }
     });
     return (
@@ -26,7 +28,7 @@ export default function Home() {
             </a>
             <h1>Vite + TypeScript</h1>
             <div class="card">
-                <button id="counter" type="button">count is {counter}</button>
+                <button id="counter" type="button">Count is {count.get()}</button>
             </div>
             <p class="read-the-docs">
                 Click on the Vite and TypeScript logos to learn more

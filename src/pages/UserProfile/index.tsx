@@ -1,47 +1,22 @@
-import { transpile } from "jjsx";
 import { hydrate } from "../../../infra/render";
 import Layout from "../_layout";
-
-interface User {
-    id: number;
-    name: string;
-    username: string;
-    email: string;
-}
+import ProfileDetails from "./ProfileDetails";
+import { userState, type User } from "./shared";
 
 export default function UserProfile() {
     const pathRegex = /\/user\/(.+)/;
     const match = window.location.pathname.match(pathRegex);
     const userId = match ? match[1] : null;
-    hydrate(() => {
+    hydrate(async () => {
         if (userId) {
-            fetch(`https://jsonplaceholder.typicode.com/users/${userId}`)
-                .then(res => res.json())
-                .then((data: User) => {
-                    const Details = <ProfileDetails {...data} />;
-                    document.getElementById('profile-details')!.innerHTML = transpile(Details);
-                });
+            const res = await fetch(`https://jsonplaceholder.typicode.com/users/${userId}`);
+            const userData : User = await res.json();
+            userState.set(userData);
         }
-        return () => { };
     });
     return (
         <Layout>
-            <div id="profile-details">
-                <Spinner />
-            </div>
+            <ProfileDetails />
         </Layout>
-    )
-}
-
-function Spinner() {
-    return <div> Loading... </div>
-}
-
-function ProfileDetails(props: User) {
-    return (
-        <div>
-            <h1>{props.name}</h1>
-            <p>{props.email}</p>
-        </div>
     )
 }
