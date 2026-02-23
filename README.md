@@ -20,13 +20,14 @@ A lightweight, blazing-fast **Vite.js** template for building modern SPAs using 
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/ufukbakan/vite-jjsx-ssr.git
+    npx degit ufukbakan/vite-jjsx-ssr your-project
     ```
 2.  **Install dependencies:**
     ```bash
+    cd your-project
     bun install
     # OR
-    npm install
+    npm/pnpm/yarn install
     ```
 3.  **Run development server:**
     ```bash
