@@ -1,16 +1,20 @@
-import { userState } from "./shared";
-import { hydrate } from "../../../infra/render";
+import { userState, type User } from "./shared";
+import { hydrate } from "../../../infra/hydrate";
 import { transpile } from "jjsx";
+
+function Details({ user }: { user: User }) {
+    return (<>
+        <h1>{user.name}</h1>
+        <p>{user.email}</p>
+    </>)
+}
 
 export default function ProfileDetails() {
     hydrate(() => {
-        const unsubscribeUserData = userState.subscribe((userData) => {
-            document.getElementById('profile-details')!.innerHTML = transpile(
-                <>
-                    <h1>{userData.name}</h1>
-                    <p>{userData.email}</p>
-                </>
-            );
+        const unsubscribeUserData = userState.subscribe((user) => {
+            if (user) {
+                document.getElementById('profile-details')!.innerHTML = transpile(<Details user={user} />);
+            }
         })
         return () => {
             unsubscribeUserData();

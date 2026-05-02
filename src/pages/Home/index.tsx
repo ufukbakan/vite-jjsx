@@ -1,4 +1,4 @@
-import { hydrate } from "../../../infra/render";
+import { hydrate } from "../../../infra/hydrate";
 import typescriptLogo from "./typescript.svg";
 import Layout from "../_layout";
 import viteLogo from "/vite.svg";

@@ -15,7 +15,7 @@ export const routes = {
     ...partialRoutes,
 }
 
-export function getMatchingRoute() {
+export function getMatchingRouteComponent() {
     const pathName = window.location.pathname;
     let RouteComponent: JSX.FunctionComponent<any> | undefined;
 

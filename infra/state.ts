@@ -35,6 +35,7 @@ export function use<T>(initialState?: T) {
     }
 
     const subscribe = (fn: (newState: T) => void) => {
+        fn(state);
         subscribers.add(fn);
         return () => {
             subscribers.delete(fn);

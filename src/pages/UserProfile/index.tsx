@@ -1,4 +1,4 @@
-import { hydrate } from "../../../infra/render";
+import { hydrate } from "../../../infra/hydrate";
 import Layout from "../_layout";
 import ProfileDetails from "./ProfileDetails";
 import { userState, type User } from "./shared";
