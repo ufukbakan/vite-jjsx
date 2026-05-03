@@ -1,6 +1,6 @@
-import { init } from "jjsx";
-import { renderCurrentRoute } from "../infra/render.ts";
+import { clientRender, mount } from "@carats/csr";
+import facets from './facets';
 import './style.css';
 
-init();
-renderCurrentRoute();
+mount(facets);
+clientRender();

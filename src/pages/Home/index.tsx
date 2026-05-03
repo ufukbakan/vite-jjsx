@@ -1,8 +1,7 @@
-import { hydrate } from "../../../infra/hydrate";
+import { hydrate, use } from "@carats/hooks";
 import typescriptLogo from "./typescript.svg";
 import Layout from "../_layout";
 import viteLogo from "/vite.svg";
-import { use } from "../../../infra/state";
 
 export default function Home() {
     const count = use(0);
