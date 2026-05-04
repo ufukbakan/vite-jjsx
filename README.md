@@ -1,6 +1,6 @@
-# ⚡ Vite-JJSX
+# 💎 Carats Template
 
-A lightweight, blazing-fast **Vite.js** template for building modern SPAs using React-like functional components without the library bloat.
+A lightweight, blazing-fast template for building modern SPAs using React-like functional components without the library bloat.
 
 ---
 
@@ -18,22 +18,13 @@ A lightweight, blazing-fast **Vite.js** template for building modern SPAs using 
 
 ## 🚀 Quick Start
 
-1.  **Clone the repository:**
+1.  **Install dependencies:**
     ```bash
-    npx degit ufukbakan/vite-jjsx-ssr your-project
-    ```
-2.  **Install dependencies:**
-    ```bash
-    cd your-project
     bun install
-    # OR
-    npm/pnpm/yarn install
     ```
-3.  **Run development server:**
+2.  **Run development server:**
     ```bash
     bun run dev
-    # OR
-    npm run dev
     ```
 
 ---

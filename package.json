@@ -1,5 +1,5 @@
 {
-  "name": "vite-jjsx",
+  "name": "carats-spa",
   "private": true,
   "version": "0.0.1",
   "type": "module",
@@ -14,10 +14,10 @@
     "vite": "^8.0.10"
   },
   "dependencies": {
-    "@carats/core": "^0.0.14",
-    "@carats/csr": "^0.0.26",
+    "@carats/core": "^0.0.15",
+    "@carats/csr": "^0.0.27",
     "@carats/hooks": "^0.0.2",
-    "@carats/render": "^0.0.14",
-    "jjsx": "^4.0.0"
+    "@carats/render": "^0.0.15",
+    "jjsx": "^4.0.3"
   }
 }
