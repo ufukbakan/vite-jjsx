@@ -6,7 +6,7 @@ interface Props {
     id: string;
 }
 
-export default function UserProfile(this: CaratsComponent, props: Props) {
+export default async function UserProfile(this: CaratsComponent, props: Props) {
     this.head = <meta name="description" content="User Profile" />;
     return (
         <Layout>
