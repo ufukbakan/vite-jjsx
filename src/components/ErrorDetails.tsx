@@ -1,5 +1,5 @@
 export default function ErrorDetails(error: any) {
-    if ('message' in error) {
+    if (error.message) {
         return (
             <div>
                 <h1>Error</h1>

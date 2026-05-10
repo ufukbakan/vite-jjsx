@@ -1,15 +1,17 @@
 import { defineFacets } from "@carats/render";
-import Home from "./pages/Home";
+import Changelog from "./pages/Changelog";
+import Counter from "./pages/Counter";
+import ErrorPage from "./pages/ErrorPage";
 import NotFound from "./pages/NotFound";
-import UserProfile from "./pages/ProfilePage";
 
 export default defineFacets({
     routes: {
-        '/': Home,
-        '/user/:id': UserProfile,
+        '/': Counter,
+        '/changelog': Changelog
     },
     suspense: {
         notFound: NotFound,
+        error: ErrorPage,
         loading: () => <div>💎 Loading...</div>,
     },
 })

@@ -1,10 +1,10 @@
-import './navbar.css';
+import './Navbar.css'
 
 export default function Navigation() {
     return (
         <nav>
             <a href="/">Home</a>
-            <a href="/user/1">User</a>
+            <a href="/changelog">Changelog</a>
         </nav>
     );
 }
