@@ -1,4 +1,5 @@
 export default function ErrorDetails(error: any) {
+    console.error(error)
     if (error.message) {
         return (
             <div>
