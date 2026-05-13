@@ -15,9 +15,10 @@
   },
   "dependencies": {
     "@carats/core": "^0.0.16",
-    "@carats/csr": "^0.0.29",
-    "@carats/hooks": "^0.0.2",
+    "@carats/csr": "^0.0.30",
+    "@carats/hooks": "^0.0.4",
     "@carats/render": "^0.0.17",
+    "@carats/ssr": "^0.0.27",
     "jjsx": "^5.0.0"
   }
 }

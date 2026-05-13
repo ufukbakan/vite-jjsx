@@ -1,27 +1,20 @@
 import { hydrate, use } from "@carats/hooks";
+import type { CaratsComponent } from "@carats/render";
 import Container from "../components/Container";
 import Layout from "./_layout";
 import './Counter.css';
 import caratsLogo from '/carats.svg';
-import type { CaratsComponent } from "@carats/render";
 
-export default function Counter(this: CaratsComponent) {
+const CounterState = use(0);
+Counter.defaultProps = CounterState;
+
+export default function Counter(this: CaratsComponent, state: typeof CounterState) {
     this.head = <title>Carats App - Counter</title>;
-    const count = use(0);
     hydrate(() => {
         const incrementButton = document.querySelector<HTMLButtonElement>('#increment')!;
         const decrementButton = document.querySelector<HTMLButtonElement>('#decrement')!;
-        const rerender = () => {
-            document.getElementById('count')!.textContent = count.get().toString();
-        }
-        const increment = () => {
-            count.set(c => c + 1);
-            rerender();
-        };
-        const decrement = () => {
-            count.set(c => c - 1);
-            rerender();
-        };
+        const increment = () => state.set(p => p + 1);
+        const decrement = () => state.set(p => p - 1);
         incrementButton.addEventListener('click', increment);
         decrementButton.addEventListener('click', decrement);
 
@@ -38,7 +31,7 @@ export default function Counter(this: CaratsComponent) {
                 </a>
                 <div id="counter-card" class="card" style="margin-top: 2rem">
                     <button id="decrement" type="button">-</button>
-                    <span id="count">{count.get()}</span>
+                    <span id="count">{state.get()}</span>
                     <button id="increment" type="button">+</button>
                 </div>
             </Container>
