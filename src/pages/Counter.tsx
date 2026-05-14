@@ -1,4 +1,4 @@
-import { hydrate, use } from "@carats/hooks";
+import { afterMount, use } from "@carats/hooks";
 import type { CaratsComponent } from "@carats/render";
 import Container from "../components/Container";
 import Layout from "./_layout";
@@ -10,7 +10,7 @@ Counter.defaultProps = CounterState;
 
 export default function Counter(this: CaratsComponent, state: typeof CounterState) {
     this.head = <title>Carats App - Counter</title>;
-    hydrate(() => {
+    afterMount(() => {
         const incrementButton = document.querySelector<HTMLButtonElement>('#increment')!;
         const decrementButton = document.querySelector<HTMLButtonElement>('#decrement')!;
         const increment = () => state.set(p => p + 1);
