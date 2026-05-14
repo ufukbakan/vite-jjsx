@@ -13,7 +13,6 @@
         "jjsx": "^5.0.0",
       },
       "devDependencies": {
-        "@types/page": "^1.11.9",
         "typescript": "~5.9.3",
         "vite": "^8.0.10",
       },
@@ -75,8 +74,6 @@
     "@rolldown/pluginutils": ["@rolldown/pluginutils@1.0.0-rc.17", "", {}, "sha512-n8iosDOt6Ig1UhJ2AYqoIhHWh/isz0xpicHTzpKBeotdVsTEcxsSA/i3EVM7gQAj0rU27OLAxCjzlj15IWY7bg=="],
 
     "@tybys/wasm-util": ["@tybys/wasm-util@0.10.1", "", { "dependencies": { "tslib": "^2.4.0" } }, "sha512-9tTaPJLSiejZKx+Bmog4uSubteqTvFrVrURwkmHixBo0G4seD0zUxp98E1DzUBJxLQ3NPwXrGKDiVjwx/DpPsg=="],
-
-    "@types/page": ["@types/page@1.11.9", "", {}, "sha512-Ki8IZMwg63i7+tF3UpfDIl4rwBN1B1kWQjZCUzaWoohfMB0m9CYap/dExbz7W21uS2WPoA/8lvlDuwX0X/YfIQ=="],
 
     "detect-libc": ["detect-libc@2.1.2", "", {}, "sha512-Btj2BOOO83o3WyH59e8MgXsxEQVcarkUOpEYrubB0urwnN10yQ364rsiByU11nZlqWYZm05i/of7io4mzihBtQ=="],
 
